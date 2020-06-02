@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400;700&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Noto Sans JP', sans-serif;
+}
+
+body{
+	background: #2d333f;
+}
+
+.wrapper{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.btn_grp{
+	display: flex;
+}
+
+.btn_grp .btn{
+	width: 225px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	background: #fff;
+	margin: 0 10px;
+	border-radius: 3px;
+	cursor: pointer;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 14px;
+}
+
+.btn_grp .btn.btn_info,
+.alert_item.alert_info{
+	background: #cde8f5;
+	color: #4480ae;
+}
+
+.btn_grp .btn.btn_warning,
+.alert_item.alert_warning{
+	background: #f8f3d6;
+	color: #967132;
+}
+
+.btn_grp .btn.btn_error,
+.alert_item.alert_error{
+	background: #ecc8c5;
+	color: #b32f2d;
+}
+
+.btn_grp .btn.btn_success,
+.alert_item.alert_success{
+	background: #def2d6;
+	color: #5a7052;
+}
+
+.btn_grp .btn.btn_info:hover{
+	background: #a5c7d8;
+}
+
+.btn_grp .btn.btn_warning:hover{
+	background: #dcd4a2;
+}
+
+.btn_grp .btn.btn_error:hover{
+	background: #c79995;
+}
+
+.btn_grp .btn.btn_success:hover{
+	background: #adc5a5;
+}
+
+.alert_wrapper{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+	visibility: hidden;
+}
+
+.alert_backdrop{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #2d333f;
+	opacity: 0.9;
+	z-index: 2;
+}
+
+.alert_wrapper .alert_item{
+	z-index: 3;	
+	position: fixed;
+	top: -100%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	display: flex;
+	align-items: center;
+	padding: 25px 50px;
+	border-radius: 3px;
+	transition: all 0.2s ease;
+}
+
+.alert_wrapper .alert_item .data{
+	margin: 0 50px;
+}
+.alert_wrapper .alert_item .data .title{
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+.alert_wrapper .alert_item .data span{
+	font-weight: 700;
+}
+.alert_wrapper .alert_item .data .sub{
+	font-size: 14px;
+	font-weight: 100;
+}
+.alert_wrapper .alert_item .icon{
+	font-size: 32px;
+}
+.alert_wrapper .alert_item .close{
+	cursor: pointer;
+}
+
+.alert_item.alert_info .close:hover{
+	color: #a5c7d8;
+}
+
+.alert_item.alert_warning .close:hover{
+	color: #dcd4a2;
+}
+
+.alert_item.alert_error .close:hover{
+	color: #c79995;
+}
+
+.alert_item.alert_success .close:hover{
+	color: #adc5a5;
+}
+
+.alert_wrapper.active{
+	visibility: visible;
+}
+.alert_wrapper.active .alert_item{
+	top: 50%;
+}
